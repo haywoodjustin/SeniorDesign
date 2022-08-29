@@ -1,11 +1,11 @@
 # Justin Haywood Biography 
 
-## 1. Contact Information
+## Contact Information
 
 **Email:** haywoojn@mail.uc.edu
 
 **Phone Number:** (440)-867-4318
-## 2. Work Experience 
+## Work Experience 
 
 *Software Developer* - LCS - May 2022 to Aug 2022
 + Developed angular web application in agile team environment 
@@ -17,7 +17,7 @@
 + Adapted QA test plans to fit wide range of tests sitewide 
 + Wrote and adjusted automated API tests using rest requests 
 
-## 3. What I Want From This Project
+## What I Want From This Project
 
 I have had random ideas for projects come and go over the last few years. Most of the random ideas I have are web based applications and with my new experience and knowledge in web development I want to finally follow through on a project. 
 

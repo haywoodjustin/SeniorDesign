@@ -1,0 +1,21 @@
+Team Members
+    Justin Haywood - Project Manager and Developer
+        haywoojn@mail.uc.ed
+        440-867-4318
+
+    Lina Kaval - Developer
+        kavalla@mail.uc.edu
+        513-550-3857
+
+    Samantha Shaw - Developer, UI Design
+        shaws8@mail.uc.edu
+        513-510-6509
+
+Project Advisor
+    Dr. Bruce McFall
+
+Team Meeting Plans
+    Sprint meetings will be held once every two weeks on Tuesday’s at 3:30 pm on campus. The purpose of these meetings will be to go over the previous sprint, reflect on the work done, and to plan the next two-week sprint. We also have a group chat to communicate outside of the sprint meetings. Other team meetings and communication will be done as needed. 
+
+Project Description
+    Our project will be a web-based application that allows users to request songs to be played in group settings. Users will navigate to the website, whether it be by QR code scan or otherwise, and will be met with a session that represents the current party they are requesting songs for. One user will be the session leader. That user needs to log into their Spotify account to allow the songs to be queued. The session leader will have ability to reorder the queue and remove songs from the queue. Users can upvote songs they want to hear and there will also be a feature to keep the same song from being queued twice in a short time.

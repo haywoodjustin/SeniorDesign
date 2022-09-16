@@ -4,8 +4,10 @@
       <!-- TODO: Style not like a 5 year old -->
   </div>
   <div>
-    <div class="container">
-    
+    <div class="container" cdkScrollable>
+      <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let movie of movies" cdkDrag [cdkDragStartDelay]="500">{{movie}}</div>
+      </div>
     </div>
   </div>
 </div>

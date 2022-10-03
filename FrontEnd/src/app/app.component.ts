@@ -31,18 +31,6 @@ export class AppComponent {
     {queueOrder: 100, songName: "Last", songArtist: "Last Song"},
   ]
 
-  movies = [
-    'Episode I - The Phantom Menace',
-    'Episode II - Attack of the Clones',
-    'Episode III - Revenge of the Sith',
-    'Episode IV - A New Hope',
-    'Episode V - The Empire Strikes Back',
-    'Episode VI - Return of the Jedi',
-    'Episode VII - The Force Awakens',
-    'Episode VIII - The Last Jedi',
-    'Episode IX – The Rise of Skywalker',
-  ];
-
   drop(event: CdkDragDrop<SongRequest[]>) {
     moveItemInArray(this.songs, event.previousIndex, event.currentIndex);
   }

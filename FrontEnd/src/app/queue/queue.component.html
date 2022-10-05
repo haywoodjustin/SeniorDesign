@@ -7,16 +7,16 @@
     </div>
     <div>
       <div class="container" cdkScrollable>
-        <div cdkDropList class="queue-list" (cdkDropListDropped)="drop($event)">
-          <div class="song-request" *ngFor="let song of songs" cdkDrag [cdkDragStartDelay]="500">
-            <div class="queue-order">{{song.queueOrder}}</div>
+        <div class="queue-list" >
+          <div class="song-request" *ngFor="let song of queue.songs$ | async" >
+            <div class="queue-order">{{song.queueOrder + 1}}</div>
             <div class="song-name">{{song.songName}}</div>
             <div class="song-artist">{{song.songArtist}}</div>
           </div>
         </div>
       </div>
       <div class="add-song">
-        <button> Add Song </button>
+        <button routerLink="/addSong"> Add Song </button>
       </div>
     </div>
   </div>

@@ -18,6 +18,6 @@ export class QueueComponent implements OnInit {
   }
 
   onAddSong(){
-    this.addSong({queueOrder: 0,songName: "1 Last Cigarette",songArtist: "Band Camino"}); 
+    this.addSong({songName: "1 Last Cigarette",songArtist: "Band Camino"}); 
   }
 }

@@ -9,7 +9,7 @@
       <div class="container" cdkScrollable>
         <div class="queue-list" >
           <div class="song-request" *ngFor="let song of queue.songs$ | async" >
-            <div class="queue-order">{{song.queueOrder + 1}}</div>
+            <div class="queue-order"></div>
             <div class="song-name">{{song.songName}}</div>
             <div class="song-artist">{{song.songArtist}}</div>
           </div>

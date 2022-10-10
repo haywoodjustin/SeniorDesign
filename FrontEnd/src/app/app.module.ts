@@ -8,6 +8,8 @@ import {ButtonModule} from 'primeng/button';
 import { TableModule } from 'primeng/table'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
+import { ToastModule } from 'primeng/toast'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     ButtonModule,
     ReactiveFormsModule, 
     HttpClientModule, 
     TableModule, 
+    ToastModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Observable } from 'rxjs';
 import { SongRequest } from '../queue/song-request';
 import { QueueStoreService } from '../services/queue.service';
 import { SearchService } from '../services/search.service';
@@ -13,7 +13,9 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService] 
 })
 export class AddSongComponent implements OnInit{
-  search = new FormControl(); 
+  protected search = new FormControl();  
+
+  private searchText: string = '';  
 
   public songs: SongRequest[] = []; 
 
@@ -24,27 +26,33 @@ export class AddSongComponent implements OnInit{
   constructor(private queue: QueueStoreService, private ss: SearchService, private message: MessageService) { }
 
   ngOnInit(): void {
-    
+    this.search.valueChanges.pipe(
+      debounceTime(400),
+      distinctUntilChanged()
+      ).subscribe(term => {
+        this.searchText = term;
+        this.getSongs(term); 
+      }); 
   }
 
   getSongs(searchText: string) {
-    console.log(searchText); 
+    if(!searchText) {
+      this.songs = [];
+      return; 
+    }
     this.ss.getSongs(searchText).subscribe({
       next: (songs) => {
-        if(searchText) this.songs = songs.filter(
-          song => song.songName.toUpperCase().includes(
-            searchText.toUpperCase()) || song.songArtist.toUpperCase().includes(searchText.toUpperCase())
-            );
-        else this.songs = []; 
+        this.songs = songs; 
       },
-      error: (e) => console.error("This is an error", e),
+      error: (e) => console.error("This is an error: ", e),
       complete: () => console.info('Done Getting Songs') 
     });
   }
 
+  //TODO Reset form control and unselected clicked row on table 
+
   selectSong(song: SongRequest){
     this.message.add({severity:'info', summary:'Song Clicked', detail: song.songName}); 
-    this.getSongs(''); 
-    this.search.reset; 
+    //this.getSongs(''); 
   }
 }

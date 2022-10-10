@@ -1,10 +1,11 @@
 <p-toast></p-toast>
 
 <h1>Search</h1>
+<button [routerLink]=''>Back</button>
 
 <span class="p-input-icon-left">
     <i class="pi pi-search"></i>
-    <input type="text" class="p-inputtext" pinputtext placeholder="Search" [formControl]="search" (ngModelChange)="getSongs($event)">         
+    <input type="text" class="p-inputtext" pinputtext placeholder="Search" [formControl]="search">         
 </span>
 
 <div class="card">

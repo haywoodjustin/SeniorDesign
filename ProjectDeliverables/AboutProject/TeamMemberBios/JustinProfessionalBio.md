@@ -5,6 +5,9 @@
 **Email:** haywoojn@mail.uc.edu
 
 **Phone Number:** (440)-867-4318
+
+--- 
+
 ## Work Experience 
 
 *Software Developer* - LCS - May 2022 to Aug 2022
@@ -16,6 +19,8 @@
 + Audited newly implemented code changes in agile setting 
 + Adapted QA test plans to fit wide range of tests sitewide 
 + Wrote and adjusted automated API tests using rest requests 
+
+--- 
 
 ## What I Want From This Project
 

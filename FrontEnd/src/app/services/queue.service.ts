@@ -22,31 +22,4 @@ export class QueueService {
         this.newSong$ = (this.http.post<SongRequest>(this.queueUrl, song, this.options)); 
         this.newSong$.subscribe(s => console.log(s)); 
     }
-
-//Code Added before rework 
-    
-    // private readonly _songs = new BehaviorSubject<SongRequest[]>([]); 
-    // readonly songs$ = this._songs.asObservable(); 
-
-    // get songs(): SongRequest[] {
-    //     return this._songs.getValue(); 
-    // }
-
-    // private set songs(val: SongRequest[]) {
-    //     this._songs.next(val); 
-    // }
-
-    // addSong(song: SongRequest){
-    //     this.songs = [
-    //         ...this.songs,
-    //         {
-    //             songArtist: song.songArtist,
-    //             songName: song.songName
-    //         },
-    //     ];
-    // }
-
-    // removeSong(name: string){
-    //     this.songs = this.songs.filter(song => song.songName != name); 
-    // }
 }

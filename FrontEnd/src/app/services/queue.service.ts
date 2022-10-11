@@ -19,14 +19,13 @@ export class QueueStoreService {
         this.songs = [
             ...this.songs,
             {
-                queueOrder: song.queueOrder,
                 songArtist: song.songArtist,
                 songName: song.songName
             },
         ];
     }
 
-    removeSong(name: String){
+    removeSong(name: string){
         this.songs = this.songs.filter(song => song.songName != name); 
     }
 

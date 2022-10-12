@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, Observable } from 'rxjs';
 import { SongRequest } from '../queue/song-request';
-import { QueueStoreService } from '../services/queue.service';
+import { QueueService } from '../services/queue.service';
 import { SearchService } from '../services/search.service';
 import { MessageService } from 'primeng/api';
 
@@ -23,7 +23,7 @@ export class AddSongComponent implements OnInit{
 
   songs$: Observable<SongRequest[]> | undefined; 
 
-  constructor(private queue: QueueStoreService, private ss: SearchService, private message: MessageService) { }
+  constructor(private qs: QueueService, private ss: SearchService, private message: MessageService) { }
 
   ngOnInit(): void {
     this.search.valueChanges.pipe(
@@ -52,7 +52,8 @@ export class AddSongComponent implements OnInit{
   //TODO Reset form control and unselected clicked row on table 
 
   selectSong(song: SongRequest){
-    this.message.add({severity:'info', summary:'Song Clicked', detail: song.songName}); 
+    this.qs.addSong(song); 
+    //this.message.add({severity:'info', summary:'Song Clicked', detail: song.songName}); 
     //this.getSongs(''); 
   }
 }

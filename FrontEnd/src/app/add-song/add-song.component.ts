@@ -21,8 +21,6 @@ export class AddSongComponent implements OnInit{
 
   public selectedSong: SongRequest | undefined; 
 
-  songs$: Observable<SongRequest[]> | undefined; 
-
   constructor(private qs: QueueService, private ss: SearchService, private message: MessageService) { }
 
   ngOnInit(): void {
@@ -40,20 +38,17 @@ export class AddSongComponent implements OnInit{
       this.songs = [];
       return; 
     }
-    this.ss.getSongs(searchText).subscribe({
-      next: (songs) => {
-        this.songs = songs; 
-      },
-      error: (e) => console.error("This is an error: ", e),
-      complete: () => console.info('Done Getting Songs') 
-    });
+    // ss.getSongs returns observable 
+    // subscribe reads observable data and assigns it to local array to display
+    //TODO: Implement error catching and handling 
+    this.ss.getSongs(searchText).subscribe(songs => {
+      this.songs = songs; 
+    })
   }
-
-  //TODO Reset form control and unselected clicked row on table 
+ 
+  //TODO Reset form control and unselect clicked row on table 
 
   selectSong(song: SongRequest){
-    this.qs.addSong(song); 
-    //this.message.add({severity:'info', summary:'Song Clicked', detail: song.songName}); 
-    //this.getSongs(''); 
+    this.qs.addSong(song);  
   }
 }

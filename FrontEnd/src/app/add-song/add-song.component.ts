@@ -15,45 +15,29 @@ import { MessageService } from 'primeng/api';
 export class AddSongComponent implements OnInit{
   protected search = new FormControl();  
 
-  private searchText: string = '';  
+  songs$ = new Observable<SongRequest[]>(); 
 
-  public songs: SongRequest[] = []; 
-
-  public selectedSong: SongRequest | undefined; 
-
-  songs$: Observable<SongRequest[]> | undefined; 
+  protected selectedSong: SongRequest | undefined; 
 
   constructor(private qs: QueueService, private ss: SearchService, private message: MessageService) { }
 
   ngOnInit(): void {
+    // sets local observable equal to service observable 
+    // whens service uses "next" this observable picks it up and displays it 
+    this.songs$ = this.ss.songs$;
+    
+    //subscribe to value change of search form and fire get songs after debounce time 
     this.search.valueChanges.pipe(
       debounceTime(400),
       distinctUntilChanged()
       ).subscribe(term => {
-        this.searchText = term;
-        this.getSongs(term); 
-      }); 
+        this.ss.getSongs(term); 
+      });  
   }
-
-  getSongs(searchText: string) {
-    if(!searchText) {
-      this.songs = [];
-      return; 
-    }
-    this.ss.getSongs(searchText).subscribe({
-      next: (songs) => {
-        this.songs = songs; 
-      },
-      error: (e) => console.error("This is an error: ", e),
-      complete: () => console.info('Done Getting Songs') 
-    });
-  }
-
-  //TODO Reset form control and unselected clicked row on table 
+ 
+  //TODO Reset form control and unselect clicked row on table 
 
   selectSong(song: SongRequest){
-    this.qs.addSong(song); 
-    //this.message.add({severity:'info', summary:'Song Clicked', detail: song.songName}); 
-    //this.getSongs(''); 
+    this.qs.addSong(song);  
   }
 }

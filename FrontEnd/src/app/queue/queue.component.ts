@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SongRequest } from './song-request';
 import { QueueService } from '../services/queue.service';
-import { Observable, take } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-queue',
@@ -10,22 +10,13 @@ import { Observable, take } from 'rxjs';
 })
 export class QueueComponent implements OnInit {
 
-  private $queue: Observable<SongRequest[]> | undefined; 
+  queue$ = new Observable<SongRequest[]>(); 
 
-  public queue: SongRequest[] = []; 
-
-  constructor(public qs: QueueService) {}
+  constructor(private qs: QueueService) {}
 
   ngOnInit(): void {
-    //take 1 returns only 1 value then unsubscribes which is ideal for an on init for the queue 
-    this.qs.getQueue().pipe(take(1)).subscribe(q => {
-      this.queue = q; 
-      console.log(q); 
-    })
-
-    this.qs.newSong$.subscribe(s => {
-      console.log(s); 
-      // this.queue.push(s); 
-    })    
+    // Setting observable equal to service observable 
+    // This makes the local observable get updates when the service is updated 
+    this.queue$ = this.qs.queue$; 
   }
 }

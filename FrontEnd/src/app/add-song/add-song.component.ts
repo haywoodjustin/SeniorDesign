@@ -24,6 +24,7 @@ export class AddSongComponent implements OnInit{
   constructor(private qs: QueueService, private ss: SearchService, private message: MessageService) { }
 
   ngOnInit(): void {
+    //subscribe to value change of search form and fire get songs after debounce time 
     this.search.valueChanges.pipe(
       debounceTime(400),
       distinctUntilChanged()

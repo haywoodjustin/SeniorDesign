@@ -5,9 +5,31 @@
 - Justin Haywood (haywoojn@mail.uc.edu)
 - Lina Kaval (kavalla@mail.uc.edu)
 - Samantha Shaw (shaws8@mail.uc.edu)
-
+---
+Table of Contents
+1. [Team names and Project Abstract](ProjectDeliverables/AboutProject)
+2. Project Description
 ### Description 
 Mobile web app development with Spotify API, to create a "party mode" community queue for everyone to add songs. Think along the lines of a jukebox that everyone has access to on their phones. This app will allow people to request songs and the host of the session will be able to play songs based on the queue that builds up. 
+
+3. [User Stories and Design Diagrams](ProjectDeliverables/AssignmentFour)
+- User Stories
+- Design Diagrams: Level 0, Level 1 and Level 2 
+- Description of the Diagrams: including conventions and a brief description of the purpose of each component.
+4. [Project Tasks and Timeline](ProjectDeliverables/AssignmentSix)
+- Task List
+- Timeline
+- Effort Matrix
+5. [PPT Slideshow (includes ABET Concerns)](https://youtu.be/RsNCSI8AXmc)
+6. [Self-Assessment Essays](ProjectDeliverables/AssignmentThree/)
+7. [Professional Biographies](ProjectDeliverables/AboutProject/TeamMemberBios)
+9. [Budget](ProjectDeliverables/AssignmentSeven)
+- expenses to date or statement that there have not been any.
+- show monetary value of donated items and donation sources.
+10. Appendix
+include appropriate references, citations, links to code repositories, and meeting notes.
+there should be evidence justifying 45 hours of effort for each team member.
+
 
 --- 
 

@@ -6,7 +6,7 @@
 - Lina Kaval (kavalla@mail.uc.edu)
 - Samantha Shaw (shaws8@mail.uc.edu)
 ---
-Table of Contents
+### Table of Contents
 1. [Team names and Project Abstract](ProjectDeliverables/AboutProject)
 2. Project Description
 ### Description 
